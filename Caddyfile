@@ -1,0 +1,30 @@
+{
+	# Reverse-proxy errors must not disclose the bearer secret in request paths.
+	log default {
+		format filter {
+			wrap json
+			fields {
+				request>uri delete
+				request>headers delete
+			}
+		}
+	}
+}
+
+{$SOLVER_DOMAIN} {
+	@api {
+		method POST
+		path /{$SOLVER_SECRET}/solve /{$SOLVER_SECRET}/sts /{$SOLVER_SECRET}/get_pot
+	}
+	handle @api {
+		reverse_proxy solver:8080 {
+			transport http {
+				dial_timeout 3s
+				response_header_timeout 16s
+			}
+		}
+	}
+	handle {
+		respond "Not found" 404
+	}
+}

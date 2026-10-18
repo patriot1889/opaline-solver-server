@@ -1,0 +1,16 @@
+{
+  "build": "0229cd64",
+  "tv": {
+    "url": "https://www.youtube.com/s/player/0229cd64/tv-player-ias-tcl.vflset/tv-player-ias-tcl.js",
+    "sha256": "9c328c92afbb5dec601f3b7e4461433c9b707de85a2bdb1de51d1a775e2ad94f",
+    "sts": 20739001,
+    "n": { "opalinewarmup12345678": "tw1zdQ51GALgTUfzYxu", "abcdefghijklmno": "Jxb_4tVy0aha0" }
+  },
+  "web": {
+    "url": "https://www.youtube.com/s/player/0229cd64/player_ias.vflset/en_US/base.js",
+    "sha256": "487176ddd3e8f38401f9cf339be9572d33270ba8d0934193b7493410bf26add3",
+    "sts": 20739,
+    "n": { "opalinewarmup12345678": "33OiXjl3ozeu43iOS0G", "abcdefghijklmno": "-EWd946Cje206" },
+    "sig": { "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789": "243N10ZYXWVUTSRQPO5MLKJIHGFEDCBAzyxwvutsrqponmlkji8gfedcba" }
+  }
+}

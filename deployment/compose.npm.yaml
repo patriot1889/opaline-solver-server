@@ -1,0 +1,20 @@
+services:
+  solver:
+    build: .
+    restart: unless-stopped
+    environment:
+      SOLVER_SECRET: ${SOLVER_SECRET:?Set a random SOLVER_SECRET in .env}
+      WARMUP: "true"
+      GENERATE_IT_ENDPOINT: ${GENERATE_IT_ENDPOINT:-google}
+    ports:
+      - "${SOLVER_BIND_IP:?Set the solver host private LAN or VPN IPv4 address in .env}:8080:8080"
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,noexec,nosuid
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 1536m
+    pids_limit: 128
+    cpus: 2
+    stop_grace_period: 5s
+
